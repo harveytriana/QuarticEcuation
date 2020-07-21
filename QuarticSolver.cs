@@ -1,5 +1,13 @@
 ﻿// ================================================
 // Harvey Triana / Visionary-SAS
+// Quartic Equations
+// References:
+// Paper: A Note on the Solution of Quartic Equations
+// By Herbert E. Salzer Quartic Equations
+// Am. Math Society Proceedings, 1959.
+// Modified here for support all cases.
+// Others
+// https://en.wikipedia.org/wiki/Quadratic_equation
 // ================================================
 using System;
 using System.Collections.Generic;
@@ -7,15 +15,6 @@ using System.Numerics;
 
 namespace QuarticEcuation
 {
-    // Quartic Equations
-    // References:
-    // Paper: A Note on the Solution of Quartic Equations
-    // By Herbert E. Salzer Quartic Equations
-    // Am. Math Society Proceedings, 1959.
-    // Modified here for support all cases.
-    // Others
-    // https://en.wikipedia.org/wiki/Quadratic_equation
-
     public class QuarticSolver
     {
         readonly CubicSolver _cubicSolver = new CubicSolver();
@@ -26,11 +25,12 @@ namespace QuarticEcuation
         /// <returns>Complex[4]</returns>
         public Complex[] Solve(double a, double b, double c, double d, double e)
         {
-            double r1, r2, r3, r4, i1, i2, i3, i4;
-
-            if (IsZero(a)) {
+            if (a == 0) {
                 return null;
             }
+
+            double r1, r2, r3, r4, i1, i2, i3, i4;
+
             double A = b / a;
             double B = c / a;
             double C = d / a;

@@ -1,8 +1,6 @@
 ﻿// ================================================
 // Harvey Triana / Visionary-SAS
-// This returns an array of the Complexes.
-// Of course, a real number is a subset of the 
-// complexes. When 'i' is zero, take it like a Real
+// Cubic equation solver by Cardano´s method
 // ================================================
 using System;
 using System.Numerics;
@@ -11,7 +9,7 @@ namespace QuarticEcuation
 {
     public class CubicSolver
     {
-        const double CLOSETOZERO = 1.0E-16;
+        const double CLOSETOZERO = 1.0E-8;
 
         public Complex[] Solve(double a, double b, double c, double d)
         {

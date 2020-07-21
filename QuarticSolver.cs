@@ -46,6 +46,9 @@ namespace QuarticEcuation
             // solve cubic
             var cubicRoots = _cubicSolver.Solve(C3, C2, C1, C0);
 
+            if (cubicRoots == null) {
+                return null;
+            }
             if (IsZero(cubicRoots[0].Imaginary)) {
                 x1 = cubicRoots[0].Real;
             } else if (IsZero(cubicRoots[1].Imaginary)) {
